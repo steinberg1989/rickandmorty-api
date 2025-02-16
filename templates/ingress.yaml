@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rickandmorty-ingress
+spec:
+  rules:
+    - host: {{ .Values.ingress.hosts | first | get "host" }}
+      http:
+        paths:
+          - path: {{ .Values.ingress.hosts | first | get "paths" | first | get "path" }}
+            pathType: {{ .Values.ingress.hosts | first | get "paths" | first | get "pathType" }}
+            backend:
+              service:
+                name: rickandmorty-service
+                port:
+                  number: {{ .Values.service.port }}

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: rickandmorty-api
+description: A Helm chart for deploying the Rick and Morty API viewer
+type: application
+version: 0.1.0
+appVersion: "1.0"

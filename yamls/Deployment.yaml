@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rickandmorty-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rickandmorty-api
+  template:
+    metadata:
+      labels:
+        app: rickandmorty-api
+    spec:
+      containers:
+        - name: rickandmorty-api
+          image: cookie8monster/rickandmorty-api:latest
+          ports:
+            - containerPort: 5000

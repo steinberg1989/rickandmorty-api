@@ -1,0 +1,7 @@
+replicaCount: 1
+image:
+  repository: rickandmorty-api
+  tag: latest
+service:
+  type: ClusterIP
+  port: 80

@@ -1,0 +1,20 @@
+replicaCount: 1
+
+image:
+  repository: cookie8monster/rickandmorty-api
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: rickandmorty.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
